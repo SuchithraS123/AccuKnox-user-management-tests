@@ -20,8 +20,9 @@ class LoginPage:
     def login(self, username: str, password: str) -> None:
         self._get_field("Username").fill(username)
         self._get_field("Password").fill(password)
-        self.page.get_by_role("button", name="Login").click()
-        self.page.wait_for_load_state("networkidle")
+        with self.page.expect_navigation(url="**/dashboard/index", timeout=15000):
+            self.page.get_by_role("button", name="Login").click()
+        self.page.wait_for_url("**/dashboard/index", timeout=15000)
 
     def is_logged_in(self) -> bool:
-        return self.page.get_by_text("Dashboard").first.is_visible()
+        return "/dashboard/index" in self.page.url or self.page.get_by_text("Dashboard").count() > 0

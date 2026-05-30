@@ -1,3 +1,5 @@
+import time
+
 from pages.login_page import LoginPage
 from pages.admin_page import AdminPage
 
@@ -20,15 +22,16 @@ def test_tc_03_add_new_user_with_valid_details(page):
     login_page.goto()
     login_page.login("Admin", "admin123")
     admin_page.go_to_admin()
+    username = f"testuser01_{int(time.time())}"
     admin_page.add_user(
         role="ESS",
-        employee_name="Fiona Grace",
+        employee_name="Ganesh Kumar A",
         status="Enabled",
-        username="testuser01",
+        username=username,
         password="Test@1234",
     )
 
-    assert page.get_by_text("Successfully").count() > 0, "Success message should be displayed after creating the user"
+    assert page.get_by_text("Successfully Saved").count() > 0, "Success message should be displayed after creating the user"
 
 
 def test_tc_04_add_user_with_duplicate_username(page):
@@ -39,10 +42,14 @@ def test_tc_04_add_user_with_duplicate_username(page):
     login_page.login("Admin", "admin123")
     admin_page.go_to_admin()
     admin_page.click_add()
+    admin_page._select_dropdown("User Role", "ESS")
+    admin_page._fill_autocomplete("Employee Name", "Ganesh Kumar A")
+    admin_page._select_dropdown("Status", "Enabled")
     admin_page._get_input("Username").fill("Admin")
     admin_page._get_input("Password").fill("Test@1234")
     admin_page._get_input("Confirm Password").fill("Test@1234")
     page.get_by_role("button", name="Save").click()
+    page.wait_for_selector("text=Already exists", timeout=7000)
 
     assert page.get_by_text("Already exists").count() > 0, "Duplicate username validation should be shown"
 
