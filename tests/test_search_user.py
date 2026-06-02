@@ -1,17 +1,11 @@
+﻿from pages.admin_page import AdminPage
 from pages.login_page import LoginPage
-from pages.admin_page import AdminPage
 
 
-def test_tc_06_search_newly_created_user_using_username(page):
-    login_page = LoginPage(page)
-    admin_page = AdminPage(page)
+def test_tc_06_search_newly_created_user_using_username(page, admin_page, dynamic_user):
+    admin_page.search_user(dynamic_user)
 
-    login_page.goto()
-    login_page.login("Admin", "admin123")
-    admin_page.go_to_admin()
-    admin_page.search_user("testuser01")
-
-    assert admin_page.is_user_present("testuser01"), "Newly created user should appear in search results"
+    assert admin_page.is_user_present(dynamic_user), "Newly created user should appear in search results"
 
 
 def test_tc_07_search_with_non_existing_username(page):
