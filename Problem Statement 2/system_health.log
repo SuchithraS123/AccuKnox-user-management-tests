@@ -1,0 +1,39 @@
+2026-05-30 10:16:02  INFO      ==============================================================
+2026-05-30 10:16:02  INFO        SYSTEM HEALTH REPORT  —  2026-05-30 10:16:02
+2026-05-30 10:16:02  INFO      ==============================================================
+2026-05-30 10:16:03  INFO      CPU Usage   :   1.0%   [threshold: 80%]  ✓  OK
+2026-05-30 10:16:03  INFO        Cores     : 1 physical / 1 logical
+2026-05-30 10:16:03  INFO        Frequency : 2800.2 MHz
+2026-05-30 10:16:03  INFO      
+2026-05-30 10:16:03  INFO      Memory      :   5.6%   [threshold: 80%]  ✓  OK
+2026-05-30 10:16:03  INFO        Total     : 3.9 GB
+2026-05-30 10:16:03  INFO        Used      : 222.3 MB
+2026-05-30 10:16:03  INFO        Available : 3.7 GB
+2026-05-30 10:16:03  INFO        Swap Used : 0.0 B / 0.0 B  (0.0%)
+2026-05-30 10:16:03  INFO      
+2026-05-30 10:16:03  INFO      Disk Partitions (4 found):
+2026-05-30 10:16:03  INFO        /                      46.1%  [threshold: 85%]  ✓  OK
+2026-05-30 10:16:03  INFO          Device: /dev/vda      FS: ext4      Total: 252.0 GB  Free: 10.0 GB
+2026-05-30 10:16:03  INFO        /opt/rclone           100.0%  [threshold: 85%]  ⚠  ALERT
+2026-05-30 10:16:03  INFO          Device: /dev/vdb      FS: squashfs  Total: 9.8 MB  Free: 0.0 B
+2026-05-30 10:16:03  WARNING       >>> Disk usage on '/opt/rclone' exceeded threshold! (100.0% >= 85%)
+2026-05-30 10:16:03  INFO        /mnt/skills/public    100.0%  [threshold: 85%]  ⚠  ALERT
+2026-05-30 10:16:03  INFO          Device: /dev/vdc      FS: squashfs  Total: 768.0 KB  Free: 0.0 B
+2026-05-30 10:16:03  WARNING       >>> Disk usage on '/mnt/skills/public' exceeded threshold! (100.0% >= 85%)
+2026-05-30 10:16:03  INFO        /mnt/skills/examples  100.0%  [threshold: 85%]  ⚠  ALERT
+2026-05-30 10:16:03  INFO          Device: /dev/vdd      FS: squashfs  Total: 5.4 MB  Free: 0.0 B
+2026-05-30 10:16:03  WARNING       >>> Disk usage on '/mnt/skills/examples' exceeded threshold! (100.0% >= 85%)
+2026-05-30 10:16:03  INFO      
+2026-05-30 10:16:03  INFO      Top 5 Processes by CPU%:
+2026-05-30 10:16:03  INFO        PID       Name                       User             CPU%     MEM%  Status
+2026-05-30 10:16:03  INFO        ----------------------------------------------------------------------
+2026-05-30 10:16:03  INFO        1         process_api                root             0.0%     0.1%  sleeping
+2026-05-30 10:16:03  INFO        2         kthreadd                   root             0.0%     0.0%  sleeping
+2026-05-30 10:16:03  INFO        3         pool_workqueue_release     root             0.0%     0.0%  sleeping
+2026-05-30 10:16:03  INFO        4         kworker/R-rcu_gp           root             0.0%     0.0%  idle
+2026-05-30 10:16:03  INFO        5         kworker/R-sync_wq          root             0.0%     0.0%  idle
+2026-05-30 10:16:03  INFO      
+2026-05-30 10:16:03  INFO      ==============================================================
+2026-05-30 10:16:03  WARNING   SUMMARY: ⚠  One or more metrics exceeded their thresholds.
+2026-05-30 10:16:03  INFO      ==============================================================
+2026-05-30 10:16:03  INFO      Log saved to: /home/claude/system_health.log

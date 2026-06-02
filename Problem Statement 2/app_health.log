@@ -1,0 +1,24 @@
+2026-05-30 10:16:06  INFO      ==================================================================
+2026-05-30 10:16:06  INFO        APPLICATION HEALTH CHECKER  —  2026-05-30 10:16:06
+2026-05-30 10:16:06  INFO      ==================================================================
+2026-05-30 10:16:06  INFO      Probing 5 application(s) …
+2026-05-30 10:16:06  INFO      
+2026-05-30 10:16:07  INFO      ✗ Google                               Status: DOWN  HTTP: —      Latency: N/A         Attempts: 2
+2026-05-30 10:16:07  WARNING       Reason : HTTP 403 (expected [200])
+2026-05-30 10:16:08  INFO      ✓ GitHub                               Status: UP    HTTP: 200    Latency: 88.0 ms     Attempts: 1
+2026-05-30 10:16:09  INFO      ✗ httpbin (200 OK)                     Status: DOWN  HTTP: —      Latency: N/A         Attempts: 2
+2026-05-30 10:16:09  WARNING       Reason : HTTP 403 (expected [200])
+2026-05-30 10:16:09  INFO      ✗ httpbin (503 – simulated outage)     Status: DOWN  HTTP: —      Latency: N/A         Attempts: 1
+2026-05-30 10:16:09  WARNING       Reason : HTTP 403 (expected [200])
+2026-05-30 10:16:09  INFO      ✗ Non-existent host (DOWN)             Status: DOWN  HTTP: —      Latency: N/A         Attempts: 1
+2026-05-30 10:16:09  WARNING       Reason : Connection error — HTTPSConnectionPool(host='this-host-does-not-exist.example.invalid', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='this-host-does-not-exist.example.invalid', port=443): Failed to resolve 'this-host-does-not-exist.example.invalid' ([Errno -2] Name or service not known)"))
+2026-05-30 10:16:09  INFO      
+2026-05-30 10:16:09  INFO      ==================================================================
+2026-05-30 10:16:09  INFO      SUMMARY: 1/5 UP   |   4/5 DOWN
+2026-05-30 10:16:09  WARNING   ⚠  The following applications are DOWN:
+2026-05-30 10:16:09  WARNING      • Google  (https://www.google.com)  — HTTP 403 (expected [200])
+2026-05-30 10:16:09  WARNING      • httpbin (200 OK)  (https://httpbin.org/status/200)  — HTTP 403 (expected [200])
+2026-05-30 10:16:09  WARNING      • httpbin (503 – simulated outage)  (https://httpbin.org/status/503)  — HTTP 403 (expected [200])
+2026-05-30 10:16:09  WARNING      • Non-existent host (DOWN)  (https://this-host-does-not-exist.example.invalid)  — Connection error — HTTPSConnectionPool(host='this-host-does-not-exist.example.invalid', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='this-host-does-not-exist.example.invalid', port=443): Failed to resolve 'this-host-does-not-exist.example.invalid' ([Errno -2] Name or service not known)"))
+2026-05-30 10:16:09  INFO      ==================================================================
+2026-05-30 10:16:09  INFO      Log saved to: /home/claude/app_health.log
